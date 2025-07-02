@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
-import Navbar from "./components/navbar";
 import Dashboard from "./components/Dashboard";
 import Transactions from "./components/Transactions";
 import AddTransaction from "./components/AddTransaction";
