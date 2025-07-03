@@ -1,37 +1,39 @@
 import { Link, useLocation } from "react-router-dom";
 
-const links = [
-  { name: "Dashboard", path: "/" },
-  { name: "Transactions", path: "/transactions" },
-  { name: "Add", path: "/add-transaction" }
-];
-
 const Navbar = () => {
   const location = useLocation();
 
   return (
-    <nav className="bg-blue-700 text-white shadow-md">
-      <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold tracking-wide flex items-center gap-2">
-          <span role="img" aria-label="wallet">💰</span>
-          <span>Finance Dashboard</span>
-        </h1>
-
-        <div className="flex space-x-6 text-base font-medium">
-          {links.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`px-3 py-1 rounded-md transition duration-200 ${
-                location.pathname === link.path
-                  ? "bg-white text-blue-700 font-semibold shadow"
-                  : "hover:bg-blue-600 hover:text-yellow-300"
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </div>
+    <nav className="flex items-center justify-between px-12 py-7 bg-gradient-to-r from-[#10193a] via-[#1a237e] to-[#10193a] shadow-2xl min-h-[80px] border-b border-blue-900/60">
+      <div className="flex items-center space-x-4">
+        <span className="text-4xl drop-shadow-lg">💰</span>
+        <span className="text-white text-3xl font-extrabold tracking-wide drop-shadow-lg">Finance Dashboard</span>
+      </div>
+      <div className="flex items-center space-x-6">
+        <Link
+          to="/"
+          className={`px-6 py-2 rounded-xl font-semibold transition-all duration-200 text-white text-lg ${
+            location.pathname === "/" ? "bg-[#212b5e] shadow-md" : "hover:bg-[#283593]/80"
+          }`}
+        >
+          Dashboard
+        </Link>
+        <Link
+          to="/transactions"
+          className={`px-6 py-2 rounded-xl font-semibold transition-all duration-200 text-white text-lg ${
+            location.pathname === "/transactions" ? "bg-[#212b5e] shadow-md" : "hover:bg-[#283593]/80"
+          }`}
+        >
+          Transactions
+        </Link>
+        <Link
+          to="/add-transaction"
+          className={`px-6 py-2 rounded-xl font-semibold transition-all duration-200 text-white text-lg ${
+            location.pathname === "/add-transaction" ? "bg-[#212b5e] shadow-md" : "hover:bg-[#283593]/80"
+          }`}
+        >
+          + Add Transaction
+        </Link>
       </div>
     </nav>
   );

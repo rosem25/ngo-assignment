@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import Dashboard from "./components/Dashboard";
 import Transactions from "./components/Transactions";
+import Navbar from "./components/navbar";
 import AddTransaction from "./components/AddTransaction";
 import mockTransactions from "./assets/mockdata";
 
